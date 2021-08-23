@@ -5,7 +5,6 @@ import wikipedia
 import webbrowser
 import os
 import smtplib
-#email_data= {"Saumya": "saumya.gupta.19cse@bmu.edu.in", "Shikhar": "socialshikhar@gmail.com"}
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -47,8 +46,8 @@ def sendEmail(to, content):
     server =smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('saumya.gupta.19cse@bmu.edu.in', password)
-    server.sendmail('saumya.gupta.19cse@bmu.edu.in', to, content)
+    server.login('user1@gmail.com', password)
+    server.sendmail('user1@gmail.com', to, content)
     server.close()
 
 if __name__ == '__main__':
@@ -84,7 +83,7 @@ if __name__ == '__main__':
             try:
                 speak("What should i say?")
                 content = takeCommand()
-                to = "saumya.gupta.19cse@bmu.edu.in"
+                to = "user1@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
